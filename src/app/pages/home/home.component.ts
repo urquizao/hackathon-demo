@@ -20,6 +20,8 @@ export class HomeComponent {
   messageToSend: string | undefined;
   chatType: ChatType = ChatType.USER;
   userName: string = this.chatType == ChatType.AI ? 'User' : 'AI';
+
+  /* THIS ARRAY IS TO DISPLAY THE MESSAGES BETWEEN USERS (TEXT ONLY) - FOLLOW THE FORMAT ON THE COMMENTED OBJECT - MIGHT HAVE TO SWITCH TO OBSERVABLE IF MAKING ASYNC CALLS...*/
   messages: any[] | undefined = [
     // {
     //   Sender: 'You',
@@ -33,6 +35,7 @@ export class HomeComponent {
     // },
   ];
 
+  /*DISPLAYS THE USERS - WILL CHANGE FOR USER LIST */
   myUsers: any[] = [
     {
       UserId: 1,
