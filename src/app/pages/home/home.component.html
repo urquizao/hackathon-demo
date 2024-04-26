@@ -1,136 +1,115 @@
-<div class="w-full h-full flex gap-x-4 justify-center">
+<!-- <div class="w-full h-full flex gap-x-4 justify-center">
   <app-user-list (setChat)="handleSetChat($event)"></app-user-list>
   <app-chat-container [chatType]="chatType"></app-chat-container>
-</div>
+</div> -->
 
-<!--<div class="flex flex-col items-left max-w-640 px-0 py-0">
-    <div class="w-full md:w-1/2 flex flex-col items-center h-64" style = "justify-content: center" >
-        <div class="w-full px-4">
-            <div class="flex flex-col items-center relative">
-                <div class="absolute shadow bg-white top-100 z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
-                    <div class="flex flex-col w-full">
-                        <div class="cursor-pointer w-full border-gray-100 rounded-t border-b hover:bg-teal-100">
-                            <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-teal-100">
-                                <div class="w-6 flex flex-col items-center">
-                                    <div class="flex relative w-4 h-4 bg-orange-500 justify-center items-center m-1 mr-2 mt-1 rounded-full "><img class="rounded-full" alt="A" src="https://www.edigitalagency.com.au/wp-content/uploads/chatgpt-logo-white-green-background-png.png"> </div>
-                                </div>
-                                <div class="w-full items-center flex">
-                                    <div class="mx-2 -mt-1  ">ChatGPT (AI)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cursor-pointer w-full border-gray-100 border-b hover:bg-teal-100">
-                            <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-teal-100">
-                                <div class="w-6 flex flex-col items-center">
-                                    <div class="flex relative w-5 h-5 bg-orange-500 justify-center items-center m-1 mr-2 mt-1 rounded-full "><img class="rounded-full" alt="A" src="https://randomuser.me/api/portraits/women/62.jpg"> </div>
-                                </div>
-                                <div class="w-full items-center flex">
-                                    <div class="mx-2 -mt-1  ">Liza Blue
-                                        <div class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500">Frozen</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cursor-pointer w-full border-gray-100 border-b hover:bg-teal-100">
-                            <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-teal-100">
-                                <div class="w-6 flex flex-col items-center">
-                                    <div class="flex relative w-5 h-5 bg-orange-500 justify-center items-center m-1 mr-2 mt-1 rounded-full "><img class="rounded-full" alt="A" src="https://randomuser.me/api/portraits/men/65.jpg"> </div>
-                                </div>
-                                <div class="w-full items-center flex">
-                                    <div class="mx-2 -mt-1 w-1/2 ">Brian White
-                                        <div class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500">Dry</div>
-                                    </div>
-                                    <div class="w-1/2 flex">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cursor-pointer w-full border-gray-100 rounded-b hover:bg-teal-100">
-                            <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-teal-100">
-                                <div class="w-6 flex flex-col items-center">
-                                    <div class="flex relative bg-orange-500 justify-center items-center m-1 mr-2 w-4 h-4 mt-1 rounded-full "><img class="rounded-full" alt="A" src="https://randomuser.me/api/portraits/men/85.jpg"> </div>
-                                </div>
-                                <div class="w-full items-center flex">
-                                    <div class="mx-2 -mt-1  ">Eric Dripper
-                                        <div class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500">Cooler</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="flex flex-col items-left max-w-640 px-0 py-0 mt-1 ml-2">
+  <div
+    class="w-full md:w-1/2 flex flex-col items-center h-64"
+    style="justify-content: center"
+  >
+    <div class="w-full px-4">
+      <div class="flex flex-col items-center relative">
+        <div
+          class="absolute shadow bg-white top-100 z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj"
+        >
+          <div class="flex flex-col w-full" *ngFor="let user of myUsers">
+            <!-- ENTER HERE-->
+
+            <div
+              class="cursor-pointer w-full border-gray-100 rounded-t border-b hover:bg-teal-100"
+              (click)="test($event)"
+            >
+              <div
+                class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-teal-100"
+              >
+                <div class="w-6 flex flex-col items-center">
+                  <div
+                    class="flex relative w-4 h-4 bg-orange-500 justify-center items-center m-1 mr-2 mt-1 rounded-full"
+                  >
+                    <img
+                      class="rounded-full"
+                      alt="A"
+                      src="https://www.edigitalagency.com.au/wp-content/uploads/chatgpt-logo-white-green-background-png.png"
+                    />
+                  </div>
                 </div>
+                <div class="w-full items-center flex">
+                  <div class="mx-2 -mt-1">
+                    {{ user.FirstName }} {{ user.LastName }}
+                    <div
+                      class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500"
+                    >
+                      Frozen
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-
-
-
-
-  <div style="box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);"
-    class="fixed bottom-[calc(4rem+1.5rem)] right-0 mr-4 bg-white p-10 rounded-lg border border-[#e5e7eb] w-fit py-0">
-
-    Heading
-    <div class="flex flex-col space-y-1.5 pb-6">
-      <h2 class="font-semibold text-lg tracking-tight">Chatbox</h2>
-    </div>
-
-
-   Chat Container
-    <div class="pr-4 h-[474px]" style="min-width: 100%; display: table;">
-     Chat Message AI 
-      <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1"><span
-          class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
-          <div class="rounded-full bg-gray-100 border p-1"><svg stroke="none" fill="black" stroke-width="1.5"
-              viewBox="0 0 24 24" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
-              </path>
-            </svg></div>
+<div
+  style="
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    width: 80%;
+  "
+  class="fixed bottom-[calc(4rem+1.5rem)] right-0 mr-4 bg-white p-10 rounded-lg border border-[#e5e7eb] w-fit py-0 my-10"
+>
+  <div class="flex flex-col space-y-13 pb-6 mt-8">
+    <h2 class="font-semibold text-lg tracking-tight">
+      Chat with {{ selectedUser.FirstName }} {{ selectedUser.LastName }}
+    </h2>
+  </div>
+  <div class="pr-4 h-[474px]" style="min-width: 100%; display: table">
+    <div *ngFor="let message of messages">
+      <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1">
+        <span
+          class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8"
+        >
+          <div class="rounded-full bg-gray-100 border p-1">
+            <svg
+              stroke="none"
+              fill="black"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              height="20"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+              ></path>
+            </svg>
+          </div>
         </span>
-        <p class="leading-relaxed"><span class="block font-bold text-gray-700">AI </span>Hi, how can I help you today?
+        <p class="leading-relaxed">
+          <span class="block font-bold text-gray-700"
+            >{{ message.Sender }} </span
+          >{{ message.Message }}
         </p>
       </div>
-
-       User Chat Message
-      <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1"><span
-          class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
-          <div class="rounded-full bg-gray-100 border p-1"><svg stroke="none" fill="black" stroke-width="0"
-              viewBox="0 0 16 16" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z">
-              </path>
-            </svg></div>
-        </span>
-        <p class="leading-relaxed"><span class="block font-bold text-gray-700">You </span>fewafef</p>
-      </div>
-       Ai Chat Message 
-      <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1"><span
-          class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
-          <div class="rounded-full bg-gray-100 border p-1"><svg stroke="none" fill="black" stroke-width="1.5"
-              viewBox="0 0 24 24" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
-              </path>
-            </svg></div>
-        </span>
-        <p class="leading-relaxed"><span class="block font-bold text-gray-700">AI </span>Sorry, I couldn't find any
-          information in the documentation about that. Expect answer to be less accurateI could not find the answer to
-          this in the verified sources.</p>
-      </div>
     </div>
-     Input box  
-    <div class="flex items-center pt-0 pb-1">
-      <form class="flex items-center justify-center w-full space-x-2">
-        <input
-          class="flex h-10 w-full rounded-md border border-[#e5e7eb] px-3 py-2 text-sm placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#9ca3af] disabled:cursor-not-allowed disabled:opacity-50 text-[#030712] focus-visible:ring-offset-2"
-          placeholder="Type your message" value="">
-        <button
-          class="inline-flex items-center justify-center rounded-md text-sm font-medium text-[#f9fafb] disabled:pointer-events-none disabled:opacity-50 bg-black hover:bg-[#111827E6] h-10 px-4 py-2 bg-blue-500">
-          Send</button>
-      </form>
-    </div>
-
-  </div>-->
+  </div>
+  <div class="flex items-center pt-0 pb-1 mb-10">
+    <form class="flex items-center justify-center w-full space-x-2">
+      <input
+        class="flex h-10 w-full rounded-md border border-[#e5e7eb] px-3 py-2 text-sm placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#9ca3af] disabled:cursor-not-allowed disabled:opacity-50 text-[#030712] focus-visible:ring-offset-2"
+        placeholder="Type your message"
+        value=""
+      />
+      <button
+        class="inline-flex items-center justify-center rounded-md text-sm font-medium text-[#f9fafb] disabled:pointer-events-none disabled:opacity-50 bg-black hover:bg-[#111827E6] h-10 px-4 py-2 bg-blue-500"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</div>
