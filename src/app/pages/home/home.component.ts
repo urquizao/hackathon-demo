@@ -71,6 +71,7 @@ export class HomeComponent {
 
   selectUser(e: any, user: any) {
     this.selectedUser = user;
+    this.messages = [];
   }
 
   setUserName(e: any) {
@@ -83,5 +84,6 @@ export class HomeComponent {
       Message: this.messageToSend,
       Timestamp: '04/26/2022',
     });
+    this.messageToSend = '';
   }
 }
